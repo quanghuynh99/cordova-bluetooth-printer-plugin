@@ -1,0 +1,1 @@
+# cordova-bluetooth-printer-plugin
