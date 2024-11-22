@@ -1,0 +1,20 @@
+{
+    "name": "cordova-plugin-bluetooth-printer",
+    "version": "0.0.1",
+    "description": "Cordova Bluetooth Printer Plugin",
+    "cordova": {
+      "id": "cordova-plugin-bluetooth-printer",
+      "platforms": [
+        "ios"
+      ]
+    },
+    "keywords": [
+      "ecosystem:cordova",
+      "cordova-ios",
+      "bluetooth",
+      "printer"
+    ],
+    "author": "Le Dien",
+    "license": "MIT"
+  }
+  

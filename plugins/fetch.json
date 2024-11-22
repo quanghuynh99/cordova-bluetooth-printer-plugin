@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-bluetooth-printer": {
+    "source": {
+      "type": "local",
+      "path": "/Users/quangdev/Desktop/cordova-bluetooth-printer/node_modules/cordova-plugin-bluetooth-printer"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

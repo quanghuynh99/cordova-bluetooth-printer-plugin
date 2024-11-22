@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.qh.bluetoothprinter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="CDVWebViewEngine">
+        <param name="ios-package" value="CDVWebViewEngine" />
+    </feature>
+    <feature name="LaunchScreen">
+        <param name="ios-package" value="CDVLaunchScreen" />
+    </feature>
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="HandleOpenUrl">
+        <param name="ios-package" value="CDVHandleOpenURL" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="IntentAndNavigationFilter">
+        <param name="ios-package" value="CDVIntentAndNavigationFilter" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="GestureHandler">
+        <param name="ios-package" value="CDVGestureHandler" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BluetoothPrinter">
+        <param name="ios-package" value="BluetoothPrinter" />
+    </feature>
+    <name>BluetoothPrinterApp</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSBluetoothAlwaysUsageDescription">
+        <string>Need bluetooth access to connect to printers</string>
+    </edit-config>
+    <edit-config file="*-Info.plist" mode="merge" target="NSBluetoothPeripheralUsageDescription">
+        <string>Need bluetooth access to connect to printers</string>
+    </edit-config>
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="SuppressesLongPressGesture" value="false" />
+    <preference name="Suppresses3DTouchGesture" value="false" />
+    <preference name="deployment-target" value="12.0" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    <preference name="MediaTypesRequiringUserActionForPlayback" value="none" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="WKWebViewOnly" value="true" />
+    <preference name="UseSwiftLanguageVersion" value="5" />
+</widget>

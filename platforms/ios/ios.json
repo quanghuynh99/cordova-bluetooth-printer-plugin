@@ -1,0 +1,59 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "*-Info.plist": {
+        "parents": {
+          "NSBluetoothAlwaysUsageDescription": [
+            {
+              "xml": "<string>Need bluetooth access to connect to printers</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ],
+          "NSBluetoothPeripheralUsageDescription": [
+            {
+              "xml": "<string>Need bluetooth access to connect to printers</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ]
+        }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"BluetoothPrinter\"><param name=\"ios-package\" value=\"BluetoothPrinter\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-bluetooth-printer": {
+      "PACKAGE_NAME": "com.qh.bluetoothprinter"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-bluetooth-printer.BluetoothPrinter",
+      "file": "plugins/cordova-plugin-bluetooth-printer/www/BluetoothPrinter.js",
+      "pluginId": "cordova-plugin-bluetooth-printer",
+      "clobbers": [
+        "cordova.plugins.BluetoothPrinter"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-bluetooth-printer": "1.0.0"
+  }
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BluetoothPrinter</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="BluetoothPrinter.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        function setPrinterPageWidth() {
+            printerHelper.setPrinterPageWidth(printOCLogSuccess, failedCallBack, 58);
+        }
+
+        function setFirstRankMaxLength() {
+            printerHelper.setFirstRankMaxLength(printOCLogSuccess, failedCallBack, 16, 20);
+        }
+
+        function getCurrentSetPageWidth() {
+            printerHelper.getCurrentSetPageWidth(printOCLogSuccess, failedCallBack);
+        }
+
+        function autoConnect() {
+            printerHelper.autoConnectPeripheral(printOCLogSuccess, failedCallBack);
+        }
+
+        function isConnect() {
+            printerHelper.isConnectPeripheral(printOCLogSuccess, failedCallBack);
+        }
+
+        function scanForPeripherals() {
+            printerHelper.scanForPeripherals(getDeviceListSuccess, failedCallBack, "1");
+        }
+
+        function stopScan() {
+            printerHelper.stopScan(printOCLogSuccess, failedCallBack);
+        }
+
+        function getDeviceList() {
+            printerHelper.getDeviceList(getDeviceListSuccess, failedCallBack);
+        }
+
+        var devicesList = null;
+
+        function getDeviceListSuccess(msg) {
+            var megStr = JSON.stringify(msg)
+            printOCLog("getDevices:" + megStr);
+            devicesList = msg;
+
+            renderDeviceTable(devicesList);
+        }
+
+        function renderDeviceTable(devices) {
+            const tableBody = document.getElementById('deviceTableBody');
+            tableBody.innerHTML = '';
+
+            devices.forEach((device, index) => {
+                const row = document.createElement('tr');
+                const idCell = document.createElement('td');
+                idCell.textContent = device.uuid || 'N/A';
+                row.appendChild(idCell);
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = device.name || 'Unknown';
+                row.appendChild(nameCell);
+
+                const actionCell = document.createElement('td');
+                const connectButton = document.createElement('button');
+                connectButton.textContent = 'Kết nối';
+                connectButton.style.fontSize = '16px';
+                connectButton.onclick = function() {
+                    connectPeripheral(device.uuid);
+                };
+                actionCell.appendChild(connectButton);
+                row.appendChild(actionCell);
+
+                tableBody.appendChild(row);
+                console.log(`Row ${index + 1} added: ID=${device.uuid}, Name=${device.name}`);
+                showToast('Dòng đã được thêm vào bảng thành công!');
+                showToast('Tổng số dòng đã được thêm vào bảng: ' + devices.length);
+            });
+        }
+
+        function connectPeripheral(uuid) {
+            showToast('Tổng số dòng đã được thêm vào bảng: ' + uuid);
+
+            if (!uuid) {
+                console.error('UUID không hợp lệ hoặc không được cung cấp.');
+                return;
+            }
+            console.log(`Đang kết nối tới thiết bị với UUID: ${uuid}`);
+            // Gọi phương thức connectPeripheral với UUID cụ thể
+            printerHelper.connectPeripheral(printOCLogSuccess, failedCallBack, uuid);
+        }
+
+        function setupPrinterInfos() {
+            printerInfoHelper.appendText('test_title', BTPAlignmentType.center, BTPFontType.middle);
+            printerInfoHelper.appendText('Test E-Commerce Service Center (Sales Receipt)');
+            printerInfoHelper.appendSpaceLine();
+
+            printerInfoHelper.appendTextList(["left", "right"]);
+            printerInfoHelper.appendTextList(["Time", "2016-04-27 10:01:50"], 0);
+            printerInfoHelper.appendTextList(["Order", "4000020160427100150"], 0);
+            printerInfoHelper.appendTextList(["Others", "None"]);
+
+            printerInfoHelper.appendText("Address: Shenzhen City Nanshan District Xuefu Road East, near Shenzhen University, Ali store next to KFC", BTPAlignmentType.left);
+            printerInfoHelper.appendSeperatorLine();
+            printerInfoHelper.appendTextList(["Item Item Item Item Item Item Item Item Item 20 Item Item Item", "Quantity", "Unit Price"], 1);
+            printerInfoHelper.appendTextList(["Pencil", 5, 2.0]);
+            printerInfoHelper.appendTextList(["Eraser", 1, 1.0]);
+            printerInfoHelper.appendSeperatorLine();
+            printerInfoHelper.appendTextList(["Item", "Unit Price", "Quantity", "Total Price"], 1);
+            printerInfoHelper.appendTextList(["Pencil Sharpener", "2.00", "5", "10.00"]);
+            printerInfoHelper.appendTextList(["Notebook", "4.00", "10", "40.00"]);
+            printerInfoHelper.appendSeperatorLine();
+            printerInfoHelper.appendTextList(["Total:", "20"]);
+            printerInfoHelper.appendTextList(["Received:", "100.00"]);
+            printerInfoHelper.appendTextList(["Change:", "80.00"]);
+            printerInfoHelper.appendSeperatorLine();
+            printerInfoHelper.appendBarCode('123456789012');
+            printerInfoHelper.appendFooter("Thanks");
+            printerInfoHelper.appendCutpage();
+            console.log("success");
+        }
+
+        function setPrinterInfoAndPrinter() {
+            // var jsonStr = getParamFull();
+            var jsonStr = printerInfoHelper.getPrinterInfoJsonString();
+            printerHelper.setPrinterInfoAndPrinter(printOCLogSuccess, failedCallBack, jsonStr);
+        }
+
+        function stopConnection() {
+            printerHelper.stopConnection(printOCLogSuccess, failedCallBack);
+        }
+
+        function printOCLog(msg) {
+            printerHelper.printOCLog(printOCLogSuccess, failedCallBack, msg);
+        }
+
+        function printOCLogSuccess(msg) {
+            printOCLog(msg);
+        }
+
+        function failedCallBack(msg) {
+            printOCLog(msg);
+        }
+
+        function getImageBase64() {
+            var str = "";
+            return str;
+        }
+
+        function showToast(message) {
+            var toastEl = document.getElementById('toast');
+            toastEl.querySelector('.toast-body').textContent = message;
+            toastEl.style.display = 'block';
+
+            setTimeout(function() {
+                toastEl.style.display = 'none';
+            }, 3000); // 3 giây sau toast tự động ẩn
+        }
+    </script>
+    <style>
+        button {
+            width: 300px;
+            height: 50px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body style="padding-top:100px">
+    <button style="font-size:20px;" onclick="autoConnect();" ; width="200;" ; height="200;">Tự động kết nối</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="isConnect();">Kiểm tra đã kết nối hay chưa</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="scanForPeripherals();">Bắt đầu quét</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="stopScan();">Dừng quét</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="getDeviceList();">Lấy danh sách thiết bị</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="connectPeripheral();">Kết nối thiết bị</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="setupPrinterInfos();">Tạo thông tin in</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="setPrinterInfoAndPrinter();">Cài đặt thông tin in và in</button>
+    <br><br>
+    <button style="font-size:20px;" onclick="stopConnection();">Ngắt kết nối</button>
+    <br>
+    <!-- <br>
+    <button style="font-size:20px;" onclick="setPrinterPageWidth();">Cài đặt chiều rộng giấy</button>
+    <br>
+    <button style="font-size:20px;" onclick="setFirstRankMaxLength();">Cài đặt độ dài tối đa của cột đầu tiên (3 hoặc 4 cột)</button>
+    <br>
+    <button style="font-size:20px;" onclick="getCurrentSetPageWidth();">Lấy chiều rộng giấy hiện tại</button> -->
+    <br>
+    <br>
+
+    <table border="1" style="width: 50%; margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="deviceTableBody">
+            <!-- Dữ liệu sẽ được thêm vào đây -->
+        </tbody>
+    </table>
+
+    <div id="toast" class="toast position-fixed bottom-0 end-0 p-3" style="z-index: 11; display: none;">
+        <div class="toast-header">
+            <strong class="me-auto">Thông báo</strong>
+        </div>
+        <div class="toast-body">
+            Thông báo thêm dòng thành công!
+        </div>
+    </div>
+</body>
+
+</html>

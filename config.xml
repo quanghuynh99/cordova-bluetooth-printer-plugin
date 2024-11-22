@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.qh.bluetoothprinter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>BluetoothPrinterApp</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+
+    <!-- Thêm các cài đặt sau -->
+    <preference name="deployment-target" value="12.0" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+    <preference name="MediaTypesRequiringUserActionForPlayback" value="none" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+
+    <!-- Cài đặt cho iOS -->
+    <platform name="ios">
+        <preference name="WKWebViewOnly" value="true" />
+        <preference name="UseSwiftLanguageVersion" value="5" />
+        <edit-config target="NSBluetoothAlwaysUsageDescription" file="*-Info.plist" mode="merge">
+            <string>Need bluetooth access to connect to printers</string>
+        </edit-config>
+        <edit-config target="NSBluetoothPeripheralUsageDescription" file="*-Info.plist" mode="merge">
+            <string>Need bluetooth access to connect to printers</string>
+        </edit-config>
+    </platform>
+</widget>

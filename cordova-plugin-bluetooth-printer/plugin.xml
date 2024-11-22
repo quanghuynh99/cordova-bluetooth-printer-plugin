@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-bluetooth-printer"
+        version="1.0.0">
+    <name>Bluetooth Printer</name>
+    <description>Cordova Bluetooth Printer Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,bluetooth,printer</keywords>
+    
+    <js-module src="www/BluetoothPrinter.js" name="BluetoothPrinter">
+        <clobbers target="cordova.plugins.BluetoothPrinter" />
+    </js-module>
+    
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BluetoothPrinter">
+                <param name="ios-package" value="BluetoothPrinter" />
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/HLBluetooth/HLBLEConst.h" />
+        <source-file src="src/ios/HLBluetooth/HLBLEManager.m" />
+        <header-file src="src/ios/HLBluetooth/HLBLEManager.h" />
+
+        <source-file src="src/ios/HLPrinter/HLPrinter.m" />
+        <header-file src="src/ios/HLPrinter/HLPrinter.h" />
+        <source-file src="src/ios/HLPrinter/UIImage+Bitmap.m" />
+        <header-file src="src/ios/HLPrinter/UIImage+Bitmap.h" />
+        <source-file src="src/ios/HLPrinter/UIWebView+UIImage.m" />
+        <header-file src="src/ios/HLPrinter/UIWebView+UIImage.h" />
+
+        <header-file src="src/ios/MKPrinter/MKConst.h" />
+        <source-file src="src/ios/MKPrinter/MKPrinterInfoModel.m" />
+        <header-file src="src/ios/MKPrinter/MKPrinterInfoModel.h" />
+        <source-file src="src/ios/MKPrinter/NSString+MKAdd.m" />
+        <header-file src="src/ios/MKPrinter/NSString+MKAdd.h" />
+        <header-file src="src/ios/BluetoothPrinter.h" />
+        <source-file src="src/ios/BluetoothPrinter.m" />
+        
+        <framework src="CoreBluetooth.framework" />
+    </platform>
+</plugin>
