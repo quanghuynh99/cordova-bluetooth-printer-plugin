@@ -12,10 +12,6 @@
   ],
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
-  "devDependencies": {
-    "cordova-ios": "^7.1.1",
-    "cordova-plugin-bluetooth-printer": "file:cordova-plugin-bluetooth-printer"
-  },
   "cordova": {
     "platforms": [
       "ios"
@@ -23,5 +19,9 @@
     "plugins": {
       "cordova-plugin-bluetooth-printer": {}
     }
+  },
+  "devDependencies": {
+    "cordova-ios": "^7.1.1",
+    "cordova-plugin-bluetooth-printer": "file:cordova-plugin-bluetooth-printer"
   }
 }

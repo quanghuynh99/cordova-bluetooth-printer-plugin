@@ -142,16 +142,16 @@ static HLPrinter *sharedInstance = nil;
     }else{
         str = text;
     }
-    
-    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-    NSData *data = [str dataUsingEncoding:enc];
+
+    // NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(NSUTF8StringEncoding);
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
     [_printerData appendData:data];
 }
 
 /**
  */
 - (void)setText:(NSString *)text maxChar:(int)maxChar{
-    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingWindowsVietnamese);
     NSData *data = [text dataUsingEncoding:enc];
     if (data.length > maxChar) {
         data = [data subdataWithRange:NSMakeRange(0, maxChar)];
@@ -232,7 +232,7 @@ static HLPrinter *sharedInstance = nil;
 }
 
 #pragma mark - ------------function method ----------------
-#pragma mark  文字
+#pragma mark
 - (void)appendText:(NSString *)text alignment:(HLTextAlignment)alignment{
     [self appendText:text alignment:alignment fontSize:HLFontSizeTitleSmalle];
 }
@@ -373,7 +373,7 @@ static HLPrinter *sharedInstance = nil;
     }
 }
 
-#pragma mark 图片
+#pragma mark
 - (void)appendImage:(UIImage *)image alignment:(HLTextAlignment)alignment maxWidth:(CGFloat)maxWidth{
     if (!image) {
         return;
@@ -432,7 +432,7 @@ static HLPrinter *sharedInstance = nil;
     [_printerData appendData:data];
 }
 
-#pragma mark 其他
+#pragma mark
 - (void)appendSeperatorLine{
     [self setAlignment:HLTextAlignmentCenter];
     [self setFontSize:HLFontSizeTitleSmalle];
