@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Assets.xcassets */; };
-		02FB3164BC0249C8807311D6 /* HLPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B40B63937AB4B3E842EA3D8 /* HLPrinter.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
-		4E1339D6B12345D792CF742F /* UIImage+Bitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 588C4B60FAAE483F9D36C858 /* UIImage+Bitmap.m */; };
+		49355E7196734211B090E23D /* UIImage+Bitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 9933C55830B5417A930081C5 /* UIImage+Bitmap.m */; };
 		4E7CA2B6272ABB0D00177EF9 /* config.xml in Copy Staging Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
 		4E7CA2B7272ABB0D00177EF9 /* www in Copy Staging Resources */ = {isa = PBXBuildFile; fileRef = 301BF56E109A69640062928A /* www */; };
-		4FC33641FD94411D85295DE4 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C9DD6532B742ED819E6905 /* CoreBluetooth.framework */; };
+		4F3BB01983764C87A6872923 /* BluetoothPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = A83E3A178073483BB039BA17 /* BluetoothPrinter.m */; };
+		4FC467F71E2D48358330B7CF /* HLPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = 747CFAC43AD54D818C944E2A /* HLPrinter.m */; };
+		591D60DAB0E84E0185E1D31F /* MKPrinterInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E1DAEE0DBFF44029C283895 /* MKPrinterInfoModel.m */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		73B4F71A742D45E2B1EDF21C /* NSString+MKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 782FE29E8DD84B729D453545 /* NSString+MKAdd.m */; };
-		775570C9528D45CABFE503C7 /* BluetoothPrinter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5E51D0FB8F4CECB8B1A87E /* BluetoothPrinter.m */; };
-		8ED8B1C4E23140AF90BF6D02 /* MKPrinterInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0D6B5C797245BA9FF0E1E2 /* MKPrinterInfoModel.m */; };
+		700FC0D1D4AC4641BCF63A49 /* UIWebView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17CDE0A86A4F63BB1DE228 /* UIWebView+UIImage.m */; };
+		888DB9B187D64FA3882C7156 /* HLBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B91E0B31B14B748F2402FC /* HLBLEManager.m */; };
 		90B630EF2AECBBD0009EF368 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 90B630EE2AECBBD0009EF368 /* PrivacyInfo.xcprivacy */; };
-		B39620212FCA41F989998968 /* HLBLEManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8980CE83E9BA45E7AC9A68A1 /* HLBLEManager.m */; };
-		DAC83DEB8F0996C8069A719A /* libPods-BluetoothPrinterApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC4437A2DAEF6ED0C94577C /* libPods-BluetoothPrinterApp.a */; };
-		EAEE864CEA0C4D8087567205 /* UIWebView+UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = ABFB019F2E52433CA9770C9C /* UIWebView+UIImage.m */; };
+		C6050A42D032451FA324CA13 /* NSString+MKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C44CF6AFE4A58B237973E /* NSString+MKAdd.m */; };
+		DC250136F2CE404D8B7DE252 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE410B4301404885908D21F8 /* CoreBluetooth.framework */; };
+		EE7F4DA9105A34EA35C8DBDA /* libPods-BluetoothPrinterApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C18754EBDBDB8D9D193E561 /* libPods-BluetoothPrinterApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,14 +69,14 @@
 
 /* Begin PBXFileReference section */
 		0207DA571B56EA530066E2B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0A5A089B17E54B49B3D3D988 /* HLPrinter.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HLPrinter.h; path = "cordova-plugin-bluetooth-printer/HLPrinter.h"; sourceTree = "<group>"; };
-		0E8015E28A2916906BEE4971 /* Pods-BluetoothPrinterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothPrinterApp.debug.xcconfig"; path = "Target Support Files/Pods-BluetoothPrinterApp/Pods-BluetoothPrinterApp.debug.xcconfig"; sourceTree = "<group>"; };
-		1368E8EAA42B490580461CE4 /* UIWebView+UIImage.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIWebView+UIImage.h"; path = "cordova-plugin-bluetooth-printer/UIWebView+UIImage.h"; sourceTree = "<group>"; };
+		18891D835FA9B2839F4ACD7D /* Pods-BluetoothPrinterApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothPrinterApp.debug.xcconfig"; path = "Target Support Files/Pods-BluetoothPrinterApp/Pods-BluetoothPrinterApp.debug.xcconfig"; sourceTree = "<group>"; };
+		1A1C44CF6AFE4A58B237973E /* NSString+MKAdd.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "NSString+MKAdd.m"; path = "cordova-plugin-bluetooth-printer/NSString+MKAdd.m"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* BluetoothPrinterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluetoothPrinterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		22A05D3DABB94409B12D517D /* UIImage+Bitmap.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+Bitmap.h"; path = "cordova-plugin-bluetooth-printer/UIImage+Bitmap.h"; sourceTree = "<group>"; };
+		224C753C48D147DC8CC008FF /* MKPrinterInfoModel.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = MKPrinterInfoModel.h; path = "cordova-plugin-bluetooth-printer/MKPrinterInfoModel.h"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2E0A6563C0C84CA58211BE90 /* HLBLEConst.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HLBLEConst.h; path = "cordova-plugin-bluetooth-printer/HLBLEConst.h"; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
 		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -86,29 +86,29 @@
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
 		32CA4F630368D1EE00C91783 /* BluetoothPrinterApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BluetoothPrinterApp-Prefix.pch"; sourceTree = "<group>"; };
-		588C4B60FAAE483F9D36C858 /* UIImage+Bitmap.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Bitmap.m"; path = "cordova-plugin-bluetooth-printer/UIImage+Bitmap.m"; sourceTree = "<group>"; };
-		5B18F98859F94CDBA587756C /* HLBLEConst.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HLBLEConst.h; path = "cordova-plugin-bluetooth-printer/HLBLEConst.h"; sourceTree = "<group>"; };
+		3E1DAEE0DBFF44029C283895 /* MKPrinterInfoModel.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MKPrinterInfoModel.m; path = "cordova-plugin-bluetooth-printer/MKPrinterInfoModel.m"; sourceTree = "<group>"; };
+		402594F8564044AB95C10EC2 /* UIImage+Bitmap.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+Bitmap.h"; path = "cordova-plugin-bluetooth-printer/UIImage+Bitmap.h"; sourceTree = "<group>"; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CDVLaunchScreen.storyboard; sourceTree = "<group>"; };
-		713B6674B89B458CA076ACAA /* BluetoothPrinter.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = BluetoothPrinter.h; path = "cordova-plugin-bluetooth-printer/BluetoothPrinter.h"; sourceTree = "<group>"; };
-		782FE29E8DD84B729D453545 /* NSString+MKAdd.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "NSString+MKAdd.m"; path = "cordova-plugin-bluetooth-printer/NSString+MKAdd.m"; sourceTree = "<group>"; };
-		79BF619B790547FE9F0BC710 /* HLBLEManager.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HLBLEManager.h; path = "cordova-plugin-bluetooth-printer/HLBLEManager.h"; sourceTree = "<group>"; };
-		7B40B63937AB4B3E842EA3D8 /* HLPrinter.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = HLPrinter.m; path = "cordova-plugin-bluetooth-printer/HLPrinter.m"; sourceTree = "<group>"; };
-		8980CE83E9BA45E7AC9A68A1 /* HLBLEManager.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = HLBLEManager.m; path = "cordova-plugin-bluetooth-printer/HLBLEManager.m"; sourceTree = "<group>"; };
+		721D72B777ED4B59992D03B2 /* BluetoothPrinter.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = BluetoothPrinter.h; path = "cordova-plugin-bluetooth-printer/BluetoothPrinter.h"; sourceTree = "<group>"; };
+		747CFAC43AD54D818C944E2A /* HLPrinter.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = HLPrinter.m; path = "cordova-plugin-bluetooth-printer/HLPrinter.m"; sourceTree = "<group>"; };
+		7C18754EBDBDB8D9D193E561 /* libPods-BluetoothPrinterApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BluetoothPrinterApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1107310486CEB800E47090 /* BluetoothPrinterApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BluetoothPrinterApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		90B630EE2AECBBD0009EF368 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		AA5E51D0FB8F4CECB8B1A87E /* BluetoothPrinter.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = BluetoothPrinter.m; path = "cordova-plugin-bluetooth-printer/BluetoothPrinter.m"; sourceTree = "<group>"; };
-		ABFB019F2E52433CA9770C9C /* UIWebView+UIImage.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+UIImage.m"; path = "cordova-plugin-bluetooth-printer/UIWebView+UIImage.m"; sourceTree = "<group>"; };
-		AD82F254AE5244F69646A76A /* NSString+MKAdd.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "NSString+MKAdd.h"; path = "cordova-plugin-bluetooth-printer/NSString+MKAdd.h"; sourceTree = "<group>"; };
-		ADC4437A2DAEF6ED0C94577C /* libPods-BluetoothPrinterApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BluetoothPrinterApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE0D6B5C797245BA9FF0E1E2 /* MKPrinterInfoModel.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = MKPrinterInfoModel.m; path = "cordova-plugin-bluetooth-printer/MKPrinterInfoModel.m"; sourceTree = "<group>"; };
-		AEC51DA66AAB4BC7807537BB /* MKConst.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = MKConst.h; path = "cordova-plugin-bluetooth-printer/MKConst.h"; sourceTree = "<group>"; };
-		C5C9DD6532B742ED819E6905 /* CoreBluetooth.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		C71B83E1FA126BC7D782236F /* Pods-BluetoothPrinterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothPrinterApp.release.xcconfig"; path = "Target Support Files/Pods-BluetoothPrinterApp/Pods-BluetoothPrinterApp.release.xcconfig"; sourceTree = "<group>"; };
-		E56A2643BEE94D52A8F82580 /* MKPrinterInfoModel.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = MKPrinterInfoModel.h; path = "cordova-plugin-bluetooth-printer/MKPrinterInfoModel.h"; sourceTree = "<group>"; };
+		9933C55830B5417A930081C5 /* UIImage+Bitmap.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Bitmap.m"; path = "cordova-plugin-bluetooth-printer/UIImage+Bitmap.m"; sourceTree = "<group>"; };
+		A2F9E9FC198B421CA9063A73 /* NSString+MKAdd.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "NSString+MKAdd.h"; path = "cordova-plugin-bluetooth-printer/NSString+MKAdd.h"; sourceTree = "<group>"; };
+		A83E3A178073483BB039BA17 /* BluetoothPrinter.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = BluetoothPrinter.m; path = "cordova-plugin-bluetooth-printer/BluetoothPrinter.m"; sourceTree = "<group>"; };
+		B0307F1718841FF482A7C83E /* Pods-BluetoothPrinterApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluetoothPrinterApp.release.xcconfig"; path = "Target Support Files/Pods-BluetoothPrinterApp/Pods-BluetoothPrinterApp.release.xcconfig"; sourceTree = "<group>"; };
+		B5B7104472234AC5A90013E4 /* HLBLEManager.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HLBLEManager.h; path = "cordova-plugin-bluetooth-printer/HLBLEManager.h"; sourceTree = "<group>"; };
+		B6C956E3A16A4C62A00434FA /* UIWebView+UIImage.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIWebView+UIImage.h"; path = "cordova-plugin-bluetooth-printer/UIWebView+UIImage.h"; sourceTree = "<group>"; };
+		C1370298216E446093645C25 /* MKConst.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = MKConst.h; path = "cordova-plugin-bluetooth-printer/MKConst.h"; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		EE18D20133A04E2D9DADF194 /* HLPrinter.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = HLPrinter.h; path = "cordova-plugin-bluetooth-printer/HLPrinter.h"; sourceTree = "<group>"; };
+		EE410B4301404885908D21F8 /* CoreBluetooth.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		F4B91E0B31B14B748F2402FC /* HLBLEManager.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = HLBLEManager.m; path = "cordova-plugin-bluetooth-printer/HLBLEManager.m"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = BluetoothPrinterApp/config.xml; sourceTree = "<group>"; };
+		FB17CDE0A86A4F63BB1DE228 /* UIWebView+UIImage.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+UIImage.m"; path = "cordova-plugin-bluetooth-printer/UIWebView+UIImage.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +117,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				4FC33641FD94411D85295DE4 /* CoreBluetooth.framework in Frameworks */,
-				DAC83DEB8F0996C8069A719A /* libPods-BluetoothPrinterApp.a in Frameworks */,
+				DC250136F2CE404D8B7DE252 /* CoreBluetooth.framework in Frameworks */,
+				EE7F4DA9105A34EA35C8DBDA /* libPods-BluetoothPrinterApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +131,15 @@
 				1D6058910D05DD3D006BFB54 /* BluetoothPrinterApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		276914A03A6DBE07807971AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18891D835FA9B2839F4ACD7D /* Pods-BluetoothPrinterApp.debug.xcconfig */,
+				B0307F1718841FF482A7C83E /* Pods-BluetoothPrinterApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
@@ -146,7 +155,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				E68ED73C4B55B3E17803A000 /* Pods */,
+				276914A03A6DBE07807971AD /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -181,8 +190,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C5C9DD6532B742ED819E6905 /* CoreBluetooth.framework */,
-				ADC4437A2DAEF6ED0C94577C /* libPods-BluetoothPrinterApp.a */,
+				EE410B4301404885908D21F8 /* CoreBluetooth.framework */,
+				7C18754EBDBDB8D9D193E561 /* libPods-BluetoothPrinterApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,35 +218,26 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				8980CE83E9BA45E7AC9A68A1 /* HLBLEManager.m */,
-				7B40B63937AB4B3E842EA3D8 /* HLPrinter.m */,
-				588C4B60FAAE483F9D36C858 /* UIImage+Bitmap.m */,
-				ABFB019F2E52433CA9770C9C /* UIWebView+UIImage.m */,
-				AE0D6B5C797245BA9FF0E1E2 /* MKPrinterInfoModel.m */,
-				782FE29E8DD84B729D453545 /* NSString+MKAdd.m */,
-				AA5E51D0FB8F4CECB8B1A87E /* BluetoothPrinter.m */,
-				5B18F98859F94CDBA587756C /* HLBLEConst.h */,
-				79BF619B790547FE9F0BC710 /* HLBLEManager.h */,
-				0A5A089B17E54B49B3D3D988 /* HLPrinter.h */,
-				22A05D3DABB94409B12D517D /* UIImage+Bitmap.h */,
-				1368E8EAA42B490580461CE4 /* UIWebView+UIImage.h */,
-				AEC51DA66AAB4BC7807537BB /* MKConst.h */,
-				E56A2643BEE94D52A8F82580 /* MKPrinterInfoModel.h */,
-				AD82F254AE5244F69646A76A /* NSString+MKAdd.h */,
-				713B6674B89B458CA076ACAA /* BluetoothPrinter.h */,
+				F4B91E0B31B14B748F2402FC /* HLBLEManager.m */,
+				747CFAC43AD54D818C944E2A /* HLPrinter.m */,
+				9933C55830B5417A930081C5 /* UIImage+Bitmap.m */,
+				FB17CDE0A86A4F63BB1DE228 /* UIWebView+UIImage.m */,
+				3E1DAEE0DBFF44029C283895 /* MKPrinterInfoModel.m */,
+				1A1C44CF6AFE4A58B237973E /* NSString+MKAdd.m */,
+				A83E3A178073483BB039BA17 /* BluetoothPrinter.m */,
+				2E0A6563C0C84CA58211BE90 /* HLBLEConst.h */,
+				B5B7104472234AC5A90013E4 /* HLBLEManager.h */,
+				EE18D20133A04E2D9DADF194 /* HLPrinter.h */,
+				402594F8564044AB95C10EC2 /* UIImage+Bitmap.h */,
+				B6C956E3A16A4C62A00434FA /* UIWebView+UIImage.h */,
+				C1370298216E446093645C25 /* MKConst.h */,
+				224C753C48D147DC8CC008FF /* MKPrinterInfoModel.h */,
+				A2F9E9FC198B421CA9063A73 /* NSString+MKAdd.h */,
+				721D72B777ED4B59992D03B2 /* BluetoothPrinter.h */,
 			);
 			name = Plugins;
 			path = BluetoothPrinterApp/Plugins;
 			sourceTree = SOURCE_ROOT;
-		};
-		E68ED73C4B55B3E17803A000 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0E8015E28A2916906BEE4971 /* Pods-BluetoothPrinterApp.debug.xcconfig */,
-				C71B83E1FA126BC7D782236F /* Pods-BluetoothPrinterApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
 		};
 		EB87FDF11871DA420020F90C /* Staging */ = {
 			isa = PBXGroup;
@@ -255,7 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "BluetoothPrinterApp" */;
 			buildPhases = (
-				A4EE940B7981E9096A87D97A /* [CP] Check Pods Manifest.lock */,
+				2BE953EA42110D879C4ABA41 /* [CP] Check Pods Manifest.lock */,
 				857339E32710CC9700A1C74C /* Copy Staging Resources */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -340,7 +340,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A4EE940B7981E9096A87D97A /* [CP] Check Pods Manifest.lock */ = {
+		2BE953EA42110D879C4ABA41 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,13 +372,13 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				B39620212FCA41F989998968 /* HLBLEManager.m in Sources */,
-				02FB3164BC0249C8807311D6 /* HLPrinter.m in Sources */,
-				4E1339D6B12345D792CF742F /* UIImage+Bitmap.m in Sources */,
-				EAEE864CEA0C4D8087567205 /* UIWebView+UIImage.m in Sources */,
-				8ED8B1C4E23140AF90BF6D02 /* MKPrinterInfoModel.m in Sources */,
-				73B4F71A742D45E2B1EDF21C /* NSString+MKAdd.m in Sources */,
-				775570C9528D45CABFE503C7 /* BluetoothPrinter.m in Sources */,
+				888DB9B187D64FA3882C7156 /* HLBLEManager.m in Sources */,
+				4FC467F71E2D48358330B7CF /* HLPrinter.m in Sources */,
+				49355E7196734211B090E23D /* UIImage+Bitmap.m in Sources */,
+				700FC0D1D4AC4641BCF63A49 /* UIWebView+UIImage.m in Sources */,
+				591D60DAB0E84E0185E1D31F /* MKPrinterInfoModel.m in Sources */,
+				C6050A42D032451FA324CA13 /* NSString+MKAdd.m in Sources */,
+				4F3BB01983764C87A6872923 /* BluetoothPrinter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
