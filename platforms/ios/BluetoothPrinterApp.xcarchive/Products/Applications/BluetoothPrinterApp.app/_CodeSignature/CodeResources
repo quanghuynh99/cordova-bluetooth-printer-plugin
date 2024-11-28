@@ -14,7 +14,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		jFB0UgmrsP/5YZtBXTqOUqn0C1s=
+		S/FqXslMrEV2NV/63BeW5nRGezw=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/objects-13.0+.nib</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		WiyZQNnOPnlHgDyvfRQ2CfBjn+0=
+		CvcCNeJW7NfRnDbs8f+KVtxRbe0=
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		/Q/1prHRa0Zl3/Tkt+S3xock0CU=
+		77/2ZKIio7oAcG0+QMEwa1g0zXI=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -58,7 +58,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		yihQS8GbExuVvmohr7WOf2zwPsQ=
+		HT2E1hnwO7OPkTpu31PyYVGZrFY=
 		</data>
 		<key>www/cordova.js</key>
 		<data>
@@ -78,11 +78,11 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		3GQouPz2s9+d0GGc1hTBdVzkKhA=
+		lSic9/m7q6wes0JDcEXoBT7W2zY=
 		</data>
 		<key>www/js/index.js</key>
 		<data>
-		WSvwBAedsNRRdMvZ2ta5dNewEME=
+		Lmifdz0fMRYoUj+hln5gR+qi4sE=
 		</data>
 		<key>www/plugins/cordova-plugin-bluetooth-printer/www/BluetoothPrinter.js</key>
 		<data>
@@ -109,7 +109,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			f+yx81imLL8Tv60zKVgjVEZUonkZCTO+dr1cJNF0gp8=
+			XFPbtZ9prRTqPvjQv4JR8UhBCkWg0RzIVsTPD5hUq8A=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib/objects-13.0+.nib</key>
@@ -151,7 +151,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6k6aNYFcVVKRmg+ADjPrD8Cc41QPMbeiXck4TNJvhMg=
+			S7cM+x7WAUnYZRrY19O/TW6ZEoFqhqoiDv40XvMKVfM=
 			</data>
 		</dict>
 		<key>PrivacyInfo.xcprivacy</key>
@@ -172,7 +172,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HEamwL8/iOvVb0OBrsDCWHfNU49dgMZUX9IFtVAPEe4=
+			TFauZOZ9nuw23VBNYAb3bbUOjKEXFSESnAFpJ8xhXUs=
 			</data>
 		</dict>
 		<key>www/cordova.js</key>
@@ -207,14 +207,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dZ3t6ZmzEcexHKeNoeyhc1CvVmBdI0PAWTYjyTkxbd8=
+			8XUWVzZVxL2FuwszBfKtHds9e+84G31CCTFoep6MQQo=
 			</data>
 		</dict>
 		<key>www/js/index.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iPg9MkeprNqDji0AC0zfSwnxMJ/BD922Pc93+oDUrBE=
+			u/gNhXZPNuFmCiS6i/ymFpPoe+75UtbzwEPcuojLZEM=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-bluetooth-printer/www/BluetoothPrinter.js</key>

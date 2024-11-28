@@ -143,15 +143,15 @@ static HLPrinter *sharedInstance = nil;
         str = text;
     }
 
-    // NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(NSUTF8StringEncoding);
-    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    NSData *data = [str dataUsingEncoding:enc];
     [_printerData appendData:data];
 }
 
 /**
  */
 - (void)setText:(NSString *)text maxChar:(int)maxChar{
-    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingWindowsVietnamese);
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
     NSData *data = [text dataUsingEncoding:enc];
     if (data.length > maxChar) {
         data = [data subdataWithRange:NSMakeRange(0, maxChar)];

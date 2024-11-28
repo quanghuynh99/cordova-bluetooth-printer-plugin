@@ -65,8 +65,6 @@
     [self callBackSuccess:YES callBackId:command.callbackId message:b];
 }
 
-
-
 #pragma mark - ***** scan peripherals *****
 - (void)scanForPeripherals:(CDVInvokedUrlCommand *)command{
     [self.commandDelegate runInBackground:^{
@@ -92,7 +90,6 @@
         }];
     }];
 }
-
 
 - (void)callBackPeripheralsWithKeep:(BOOL)keep{
     NSMutableArray *peripherals = [self getPeripheralList];
@@ -135,27 +132,6 @@
     }];
 }
 
-/** set printer info and printer */
-- (void)setPrinterInfoAndPrinter:(CDVInvokedUrlCommand *)command{
-    [self.commandDelegate runInBackground:^{
-        if (command.arguments.count > 0 && command.arguments[0] != [NSNull null]) {
-            NSString *jsonStr = command.arguments[0];
-            __weak BluetoothPrinter *weakSelf = self;
-            [self setPrinterInfoWithJsonString:jsonStr block:^(BOOL success, NSString *message) {
-                if (success) {
-                    [weakSelf finalPrinterWithBlock:^(BOOL success, NSString *message) {
-                        [weakSelf callBackSuccess:success callBackId:command.callbackId message:message];
-                    }];
-                }else{
-                    [weakSelf callBackSuccess:success callBackId:command.callbackId message:message];
-                }
-            }];
-        }else{
-            [self callBackSuccess:NO callBackId:command.callbackId message:@"error: not find param with printer info"];
-        }
-    }];
-}
-
 - (void)stopPeripheralConnection:(CDVInvokedUrlCommand *)command{
     [self stopPeripheralConnection];
     [self callBackSuccess:YES callBackId:command.callbackId message:@"stop peripheral connection"];
@@ -173,8 +149,6 @@
     [self consoleLog:log];
 }
 
-
-#pragma mark - ***** call back *****
 - (void)callBackSuccess:(BOOL)success callBackId:(NSString *)callBackId message:(NSString *)message{
     [self callBackSuccess:success callBackId:callBackId message:message keep:NO];
 }
@@ -185,14 +159,11 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:callBackId];
 }
 
-#pragma mark - **************************************************
-#pragma mark - ***** OC method *****
 - (BOOL)isConnectPeripheral{
     BOOL b = self.connectPeripheral && self.manager.connectedPerpheral;
     return b;
 }
 
-/** 扫描 并连接 设备 历史设备 */
 - (void)autoConnectPeripheral{
     if ([self isConnectPeripheral]) {
         ELog(@"Connected");
@@ -375,6 +346,126 @@
     
 }
 
+- (void)printerRowTextInfoWith:(NSArray *)textAry isTitle:(BOOL)isTitle{
+    if (textAry.count == 3) {
+        NSString *str = [textAry objectAtIndex:0];
+        NSString *frontStr = [self getSubString:str max:[HLPrinter sharedInstance].maxLength3Text];
+        [[HLPrinter sharedInstance] appendLeftText:frontStr middleText:textAry[1] rightText:textAry[2] isTitle:isTitle];
+        if (str.length > frontStr.length) {
+            NSString *subStr = [str substringFromIndex:frontStr.length];
+            NSMutableArray *nextAry = [NSMutableArray arrayWithObjects:subStr, @" ", @" ", nil];
+            [self printerRowTextInfoWith:nextAry isTitle:isTitle];
+        }
+    }else if (textAry.count == 4){
+        NSString *str = [textAry objectAtIndex:0];
+        NSString *frontStr = [self getSubString:str max:[HLPrinter sharedInstance].maxLength4Text];
+        NSMutableArray *ary = [NSMutableArray arrayWithObjects:frontStr, textAry[1], textAry[2], textAry[3], nil];
+        [[HLPrinter sharedInstance] appendTextArray:ary isTitle:isTitle];
+        if (str.length > frontStr.length) {
+            NSString *subStr = [str substringFromIndex:frontStr.length];
+            NSMutableArray *nextAry = [NSMutableArray arrayWithObjects:subStr, @" ", @" ", @" ", nil];
+            [self printerRowTextInfoWith:nextAry isTitle:isTitle];
+        }
+    }
+}
+
+- (NSString *)getSubString:(NSString *)str max:(NSInteger)maxChar{
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    NSData *data = [str dataUsingEncoding:enc];
+    if (data.length <= maxChar) {
+        return str;
+    }
+    NSString *result;
+    NSInteger sub = 0;
+    while (!result) {
+        NSData *tData = [data subdataWithRange:NSMakeRange(0, maxChar-sub)];
+        result = [[NSString alloc] initWithData:tData encoding:enc];
+        sub += 1;
+    }
+    return result;
+}
+
+- (BOOL)isChinese:(unichar)word{
+    if( word >= 0x4e00 && word <= 0x9fff){
+        return YES;
+    }
+    return NO;
+}
+
+
+- (void)stopPeripheralConnection{
+    self.connectPeripheral = nil;
+    [self.manager cancelPeripheralConnection];
+}
+
+- (void)clearPrinterInfo{
+    [[HLPrinter sharedInstance] defaultSetting];
+}
+
+- (void)consoleLog:(NSString *)log{
+    ELog(@"%@",log);
+}
+    
+#pragma mark - ***** save periphera name *****
+- (void)savePeripheralName:(NSString *)name{
+    [[NSUserDefaults standardUserDefaults] setValue:name forKey:@"PeripheralName"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)getHistoryPeripheralName{
+    return [[NSUserDefaults standardUserDefaults] valueForKey:@"PeripheralName"];
+}
+
+#pragma mark 
+- (HLBLEManager *)manager{
+    if (!_manager) {
+        _manager = [HLBLEManager sharedInstance];
+    }
+    return _manager;
+}
+
+- (NSMutableArray *)peripheralsArray{
+    if (!_peripheralsArray) {
+        _peripheralsArray = @[].mutableCopy;
+    }
+    return _peripheralsArray;
+}
+
+- (NSMutableArray *)servicesArray{
+    if (!_servicesArray) {
+        _servicesArray = @[].mutableCopy;
+    }
+    return _servicesArray;
+}
+
+- (NSMutableArray *)printerModelArray{
+    if (!_printerModelArray) {
+        _printerModelArray = @[].mutableCopy;
+    }
+    return _printerModelArray;
+}
+
+/** set printer info and printer */
+- (void)setPrinterInfoAndPrinter:(CDVInvokedUrlCommand *)command{
+    [self.commandDelegate runInBackground:^{
+        if (command.arguments.count > 0 && command.arguments[0] != [NSNull null]) {
+            NSString *jsonStr = command.arguments[0];
+            __weak BluetoothPrinter *weakSelf = self;
+            [self setPrinterInfoWithJsonString:jsonStr block:^(BOOL success, NSString *message) {
+                if (success) {
+                    [weakSelf finalPrinterWithBlock:^(BOOL success, NSString *message) {
+                        [weakSelf callBackSuccess:success callBackId:command.callbackId message:message];
+                    }];
+                }else{
+                    [weakSelf callBackSuccess:success callBackId:command.callbackId message:message];
+                }
+            }];
+        }else{
+            [self callBackSuccess:NO callBackId:command.callbackId message:@"error: not find param with printer info"];
+        }
+    }];
+}
+
 - (void)setPrinterInfoWithJsonString:(NSString *)jsonStr block:(CommandBlcok)block{
     ELog(@"jsonStr : %@", jsonStr);
     if (jsonStr == nil || jsonStr.length == 0) {
@@ -490,52 +581,6 @@
     }
 }
 
-- (void)printerRowTextInfoWith:(NSArray *)textAry isTitle:(BOOL)isTitle{
-    if (textAry.count == 3) {
-        NSString *str = [textAry objectAtIndex:0];
-        NSString *frontStr = [self getSubString:str max:[HLPrinter sharedInstance].maxLength3Text];
-        [[HLPrinter sharedInstance] appendLeftText:frontStr middleText:textAry[1] rightText:textAry[2] isTitle:isTitle];
-        if (str.length > frontStr.length) {
-            NSString *subStr = [str substringFromIndex:frontStr.length];
-            NSMutableArray *nextAry = [NSMutableArray arrayWithObjects:subStr, @" ", @" ", nil];
-            [self printerRowTextInfoWith:nextAry isTitle:isTitle];
-        }
-    }else if (textAry.count == 4){
-        NSString *str = [textAry objectAtIndex:0];
-        NSString *frontStr = [self getSubString:str max:[HLPrinter sharedInstance].maxLength4Text];
-        NSMutableArray *ary = [NSMutableArray arrayWithObjects:frontStr, textAry[1], textAry[2], textAry[3], nil];
-        [[HLPrinter sharedInstance] appendTextArray:ary isTitle:isTitle];
-        if (str.length > frontStr.length) {
-            NSString *subStr = [str substringFromIndex:frontStr.length];
-            NSMutableArray *nextAry = [NSMutableArray arrayWithObjects:subStr, @" ", @" ", @" ", nil];
-            [self printerRowTextInfoWith:nextAry isTitle:isTitle];
-        }
-    }
-}
-
-- (NSString *)getSubString:(NSString *)str max:(NSInteger)maxChar{
-    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-    NSData *data = [str dataUsingEncoding:enc];
-    if (data.length <= maxChar) {
-        return str;
-    }
-    NSString *result;
-    NSInteger sub = 0;
-    while (!result) {
-        NSData *tData = [data subdataWithRange:NSMakeRange(0, maxChar-sub)];
-        result = [[NSString alloc] initWithData:tData encoding:enc];
-        sub += 1;
-    }
-    return result;
-}
-
-- (BOOL)isChinese:(unichar)word{
-    if( word >= 0x4e00 && word <= 0x9fff){
-        return YES;
-    }
-    return NO;
-}
-
 - (void)finalPrinterWithBlock:(CommandBlcok)block{
     if (self.servicesArray.count > 0) {
         for (CBService *service in self.servicesArray) {
@@ -567,61 +612,4 @@
     }
  
 }
-
-
-- (void)stopPeripheralConnection{
-    self.connectPeripheral = nil;
-    [self.manager cancelPeripheralConnection];
-}
-
-- (void)clearPrinterInfo{
-    [[HLPrinter sharedInstance] defaultSetting];
-}
-
-- (void)consoleLog:(NSString *)log{
-    ELog(@"%@",log);
-}
-
-
-
-    
-#pragma mark - ***** save periphera name *****
-- (void)savePeripheralName:(NSString *)name{
-    [[NSUserDefaults standardUserDefaults] setValue:name forKey:@"PeripheralName"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (NSString *)getHistoryPeripheralName{
-    return [[NSUserDefaults standardUserDefaults] valueForKey:@"PeripheralName"];
-}
-
-#pragma mark - ***** lazy *****
-- (HLBLEManager *)manager{
-    if (!_manager) {
-        _manager = [HLBLEManager sharedInstance];
-    }
-    return _manager;
-}
-
-- (NSMutableArray *)peripheralsArray{
-    if (!_peripheralsArray) {
-        _peripheralsArray = @[].mutableCopy;
-    }
-    return _peripheralsArray;
-}
-
-- (NSMutableArray *)servicesArray{
-    if (!_servicesArray) {
-        _servicesArray = @[].mutableCopy;
-    }
-    return _servicesArray;
-}
-
-- (NSMutableArray *)printerModelArray{
-    if (!_printerModelArray) {
-        _printerModelArray = @[].mutableCopy;
-    }
-    return _printerModelArray;
-}
-
 @end

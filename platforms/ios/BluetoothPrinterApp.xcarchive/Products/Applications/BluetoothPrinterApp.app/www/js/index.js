@@ -22,22 +22,6 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 // function onDeviceReady() {
-//     // Cordova is now initialized. Have fun!
-
-//     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-//     document.getElementById('deviceready').classList.add('ready');
-
-//     // Thêm nút quét thiết bị
-//     var scanButton = document.createElement('button');
-//     scanButton.innerHTML = 'Scan Bluetooth Printers';
-//     scanButton.onclick = scanDevices;
-//     document.body.appendChild(scanButton);
-
-//     // Thêm nút in tài liệu
-//     var printButton = document.createElement('button');
-//     printButton.innerHTML = 'Print Document';
-//     printButton.onclick = printDocument;
-//     document.body.appendChild(printButton);
 // }
 
 // function scanDevices() {
@@ -52,7 +36,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 // }
 
 // function printDocument() {
-//     // Giả sử bạn đã có đường dẫn tới file cần in
 //     var filePath = 'path/to/your/document.pdf';
 //     cordova.plugins.BluetoothPrinter.printDocument(
 //         filePath,

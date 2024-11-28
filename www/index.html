@@ -3,6 +3,7 @@
 
 <head>
     <title>BluetoothPrinter</title>
+    <meta charset="UTF-8">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="BluetoothPrinter.js"></script>
@@ -82,36 +83,31 @@
 
         function connectPeripheral(uuid) {
             showToast('Tổng số dòng đã được thêm vào bảng: ' + uuid);
-
             if (!uuid) {
                 console.error('UUID không hợp lệ hoặc không được cung cấp.');
                 return;
             }
             console.log(`Đang kết nối tới thiết bị với UUID: ${uuid}`);
-            // Gọi phương thức connectPeripheral với UUID cụ thể
             printerHelper.connectPeripheral(printOCLogSuccess, failedCallBack, uuid);
         }
 
         function setupPrinterInfos() {
-            printerInfoHelper.appendText('test_title', BTPAlignmentType.center, BTPFontType.middle);
-            printerInfoHelper.appendText('Chào mừng đến với cordova');
+            printerInfoHelper.appendText('Hoa Don Ban Le', BTPAlignmentType.center, BTPFontType.middle);
+            printerInfoHelper.appendText('CT TNHH 1TV ABC');
             printerInfoHelper.appendSpaceLine();
-
-            // printerInfoHelper.appendTextList(["left", "right"]);
-            // printerInfoHelper.appendTextList(["Time", "2016-04-27 10:01:50"], 0);
-            // printerInfoHelper.appendTextList(["Order", "4000020160427100150"], 0);
-            // printerInfoHelper.appendTextList(["Others", "None"]);
-            // printerInfoHelper.appendSeperatorLine();
-            // printerInfoHelper.appendTextList(["Item", "Unit Price", "Quantity", "Total Price"], 1);
-            // printerInfoHelper.appendTextList(["Pencil Sharpener", "2.00", "5", "10.00"]);
-            // printerInfoHelper.appendTextList(["Notebook", "4.00", "10", "40.00"]);
-            // printerInfoHelper.appendSeperatorLine();
-            // printerInfoHelper.appendTextList(["Total:", "20"]);
-            // printerInfoHelper.appendTextList(["Received:", "100.00"]);
-            // printerInfoHelper.appendTextList(["Change:", "80.00"]);
+            printerInfoHelper.appendTextList(["left", "right"]);
+            printerInfoHelper.appendTextList(["Thoi gian", "2016-04-27 10:01:50"], 0);
             printerInfoHelper.appendSeperatorLine();
-            // printerInfoHelper.appendBarCode('123456789012');
-            printerInfoHelper.appendFooter("Cảm Ơn");
+            printerInfoHelper.appendTextList(["Ten", "Don gia", "SL", "Tong"], 1);
+            printerInfoHelper.appendTextList(["But chi", "2.00", "5", "10.00"]);
+            printerInfoHelper.appendTextList(["So ghi chep", "4.00", "10", "40.00"]);
+            printerInfoHelper.appendSeperatorLine();
+            printerInfoHelper.appendTextList(["Thanh tien:", "20"]);
+            printerInfoHelper.appendTextList(["Nhan cua KH:", "100.00"]);
+            printerInfoHelper.appendTextList([":", "80.00"]);
+            printerInfoHelper.appendSeperatorLine();
+            printerInfoHelper.appendBarCode('123456789012');
+            printerInfoHelper.appendFooter("Thank you!");
             printerInfoHelper.appendCutpage();
             console.log("success");
         }
@@ -190,16 +186,7 @@
     <button style="font-size:20px;" onclick="setPrinterInfoAndPrinter();">Cài đặt thông tin in và in</button>
     <br><br>
     <button style="font-size:20px;" onclick="stopConnection();">Ngắt kết nối</button>
-    <br>
-    <!-- <br>
-    <button style="font-size:20px;" onclick="setPrinterPageWidth();">Cài đặt chiều rộng giấy</button>
-    <br>
-    <button style="font-size:20px;" onclick="setFirstRankMaxLength();">Cài đặt độ dài tối đa của cột đầu tiên (3 hoặc 4 cột)</button>
-    <br>
-    <button style="font-size:20px;" onclick="getCurrentSetPageWidth();">Lấy chiều rộng giấy hiện tại</button> -->
-    <br>
-    <br>
-
+    <br><br>
     <table border="1" style="width: 50%; margin-top: 20px;">
         <thead>
             <tr>

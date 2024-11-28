@@ -1,11 +1,3 @@
-//
-//  HLPrinter.h
-//  HLBluetoothDemo
-//
-//  Created by Harvey on 16/5/3.
-//  Copyright © 2016年 Halley. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
