@@ -8,11 +8,7 @@ typedef NS_ENUM(NSInteger, HLOptionStage) {
     HLOptionStageSeekdescriptors,     
 };
 
-#pragma mark ------------------- 通知的定义 --------------------------
-
 #define kCentralManagerStateUpdateNoticiation @"kCentralManagerStateUpdateNoticiation"
-
-#pragma mark ------------------- block的定义 --------------------------
 
 typedef void(^HLStateUpdateBlock)(CBCentralManager *central);
 

@@ -93,27 +93,25 @@
 
         function setupPrinterInfos() {
             printerInfoHelper.appendText('Hoa Don Ban Le', BTPAlignmentType.center, BTPFontType.middle);
-            printerInfoHelper.appendText('CT TNHH 1TV ABC');
+            printerInfoHelper.appendText('CT TNHH 1 TV ABC');
             printerInfoHelper.appendSpaceLine();
-            printerInfoHelper.appendTextList(["left", "right"]);
-            printerInfoHelper.appendTextList(["Thoi gian", "2016-04-27 10:01:50"], 0);
+            printerInfoHelper.appendTextList(["Thoi gian", "2016-04-27 10:01:50"], 1);
             printerInfoHelper.appendSeperatorLine();
-            printerInfoHelper.appendTextList(["Ten", "Don gia", "SL", "Tong"], 1);
+            printerInfoHelper.appendTextList(["Ten", "Gia", "SL", "Tong"], 1);
             printerInfoHelper.appendTextList(["But chi", "2.00", "5", "10.00"]);
             printerInfoHelper.appendTextList(["So ghi chep", "4.00", "10", "40.00"]);
             printerInfoHelper.appendSeperatorLine();
             printerInfoHelper.appendTextList(["Thanh tien:", "20"]);
-            printerInfoHelper.appendTextList(["Nhan cua KH:", "100.00"]);
-            printerInfoHelper.appendTextList([":", "80.00"]);
+            printerInfoHelper.appendTextList(["Nhan KH:", "100.00"]);
+            printerInfoHelper.appendTextList(["Tra lai", "80.00"]);
             printerInfoHelper.appendSeperatorLine();
-            printerInfoHelper.appendBarCode('123456789012');
+            printerInfoHelper.appendBarCode('0824574708');
             printerInfoHelper.appendFooter("Thank you!");
             printerInfoHelper.appendCutpage();
             console.log("success");
         }
 
         function setPrinterInfoAndPrinter() {
-            // var jsonStr = getParamFull();
             var jsonStr = printerInfoHelper.getPrinterInfoJsonString();
             printerHelper.setPrinterInfoAndPrinter(printOCLogSuccess, failedCallBack, jsonStr);
         }
@@ -146,7 +144,7 @@
 
             setTimeout(function() {
                 toastEl.style.display = 'none';
-            }, 3000); // 3 giây sau toast tự động ẩn
+            }, 3000);
         }
     </script>
     <style>
@@ -187,6 +185,7 @@
     <br><br>
     <button style="font-size:20px;" onclick="stopConnection();">Ngắt kết nối</button>
     <br><br>
+
     <table border="1" style="width: 50%; margin-top: 20px;">
         <thead>
             <tr>
@@ -196,7 +195,6 @@
             </tr>
         </thead>
         <tbody id="deviceTableBody">
-            <!-- Dữ liệu sẽ được thêm vào đây -->
         </tbody>
     </table>
 

@@ -46,7 +46,7 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="SuppressesLongPressGesture" value="false" />
     <preference name="Suppresses3DTouchGesture" value="false" />
-    <preference name="deployment-target" value="12.0" />
+    <preference name="deployment-target" value="11.0" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />

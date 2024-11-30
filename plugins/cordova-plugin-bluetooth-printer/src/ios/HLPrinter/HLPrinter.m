@@ -86,7 +86,6 @@ static HLPrinter *sharedInstance = nil;
     }
 }
 
-#pragma mark - ***** 设置打印机纸张宽度 ******
 - (void)setPageWidth:(NSInteger)pageWidth{
     if (pageWidth > 0) {
         _pageWidth = pageWidth;
@@ -96,8 +95,6 @@ static HLPrinter *sharedInstance = nil;
     }
 }
 
-
-#pragma mark - -----------------------------
 /**
  *  
  */
@@ -115,8 +112,6 @@ static HLPrinter *sharedInstance = nil;
 }
 
 /**
- *  
- *
  *  @param alignment
  */
 - (void)setAlignment:(HLTextAlignment)alignment{
@@ -143,15 +138,15 @@ static HLPrinter *sharedInstance = nil;
         str = text;
     }
 
-    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
-    NSData *data = [str dataUsingEncoding:enc];
+    // NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(NSUTF8StringEncoding);
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
     [_printerData appendData:data];
 }
 
 /**
  */
 - (void)setText:(NSString *)text maxChar:(int)maxChar{
-    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+    NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingWindowsVietnamese);
     NSData *data = [text dataUsingEncoding:enc];
     if (data.length > maxChar) {
         data = [data subdataWithRange:NSMakeRange(0, maxChar)];
@@ -165,9 +160,6 @@ static HLPrinter *sharedInstance = nil;
     [self setText:text];
 }
 
-/**
- *  
- */
 - (void)setOffsetText:(NSString *)text{
     NSDictionary *dict = @{NSFontAttributeName:[UIFont systemFontOfSize:22.0]};
     NSAttributedString *valueAttr = [[NSAttributedString alloc] initWithString:text attributes:dict];
@@ -223,8 +215,6 @@ static HLPrinter *sharedInstance = nil;
     [_printerData appendData:infoData];
 }
 
-/**
- */
 - (void)printStoredQRData{
     Byte printBytes [] = {0x1D,0x28,0x6B,0x03,0x00,0x31,0x51,48};
 //    Byte printBytes [] = {29,40,107,3,0,49,81,48};
@@ -350,7 +340,7 @@ static HLPrinter *sharedInstance = nil;
         
         NSInteger offset = 0;
         if (!isTitle) {
-            offset = 5;
+            offset = 2;
         }
         
         if ([texts[0] length] > 0) {
@@ -479,12 +469,12 @@ static HLPrinter *sharedInstance = nil;
 @implementation MKPageWidthConfig
 - (void)setupConfigWith:(NSInteger)width{
     if (width == 58) {
-        self.lineStr = @"- - - - - - - - - - - - - - - -";
-        self.offsetAryfor3Text = [NSArray arrayWithObjects:@(150), @(300), nil];
-        self.offsetAryfor4Text = [NSArray arrayWithObjects:@(140), @(220), @(300), nil];
+        self.lineStr = @"- - - - - - - -";
+        self.offsetAryfor3Text = [NSArray arrayWithObjects:@(100), @(150), nil];
+        self.offsetAryfor4Text = [NSArray arrayWithObjects:@(130), @(210), @(300), nil];
         self.virtualWidth = 30;
     }else{
-        self.lineStr = @"- - - - - - - - - - - - - - - - - - - - - - - -";
+        self.lineStr = @"- - - - - - - - ";
         self.offsetAryfor3Text = [NSArray arrayWithObjects:@(240), @(480), nil];
         self.offsetAryfor4Text = [NSArray arrayWithObjects:@(280), @(380), @(470), nil];
         self.virtualWidth = 46;

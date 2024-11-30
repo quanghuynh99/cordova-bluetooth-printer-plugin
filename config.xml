@@ -9,8 +9,7 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 
-    <!-- Thêm các cài đặt sau -->
-    <preference name="deployment-target" value="12.0" />
+    <preference name="deployment-target" value="11.0" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="EnableViewportScale" value="false" />
@@ -18,7 +17,6 @@
     <preference name="MediaTypesRequiringUserActionForPlayback" value="none" />
     <preference name="SuppressesIncrementalRendering" value="false" />
 
-    <!-- Cài đặt cho iOS -->
     <platform name="ios">
         <preference name="WKWebViewOnly" value="true" />
         <preference name="UseSwiftLanguageVersion" value="5" />

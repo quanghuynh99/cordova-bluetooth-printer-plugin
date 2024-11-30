@@ -163,9 +163,6 @@ static HLBLEManager *instance = nil;
     }
 }
 
-
-
-
 #pragma mark - CBCentralManagerDelegate
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central{
     [[NSNotificationCenter defaultCenter] postNotificationName:kCentralManagerStateUpdateNoticiation object:@{@"central":central}];
@@ -181,7 +178,6 @@ static HLBLEManager *instance = nil;
     }
 }
 
-#pragma mark ---------------- 连接外设成功和失败的代理 ---------------
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
     _connectedPerpheral = peripheral;
    
@@ -215,7 +211,6 @@ static HLBLEManager *instance = nil;
     NSLog(@"The specified device has disconnected from us. %@",error);
 }
 
-#pragma mark ---------------- 发现服务的代理 -----------------
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(nullable NSError *)error{
     if (error) {
         if (_completionBlock) {
@@ -246,7 +241,6 @@ static HLBLEManager *instance = nil;
     }
 }
 
-#pragma mark ---------------- 服务特性的代理 --------------------
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(nullable NSError *)error{
     if (error) {
         if (_completionBlock) {
@@ -305,7 +299,6 @@ static HLBLEManager *instance = nil;
     }
 }
 
-#pragma mark ---------------- Proxy that discovers service characteristics descriptions ------------------
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverDescriptorsForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error{
     if (error) {
         if (_completionBlock) {
@@ -346,7 +339,6 @@ static HLBLEManager *instance = nil;
     }
 }
 
-#pragma mark ---------------- 写入数据的回调 --------------------
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error{
     if (!_writeToCharacteristicBlock) {
         return;
@@ -360,7 +352,6 @@ static HLBLEManager *instance = nil;
     _writeToCharacteristicBlock(characteristic,error);
 }
 
-#pragma mark ---------------- 获取信号之后的回调 ------------------
 # if  __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_0
 - (void)peripheralDidUpdateRSSI:(CBPeripheral *)peripheral error:(nullable NSError *)error {
     if (_getRSSIBlock) {
