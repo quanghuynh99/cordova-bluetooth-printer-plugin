@@ -1,41 +1,46 @@
+#import <WebKit/WebKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "UIWebView+UIImage.h"
+@interface WKWebView (UIImage)
 
-@implementation UIWebView (UIImage)
+- (void)imageForWebViewWithCompletion:(void (^)(UIImage *))completion;
 
-/**
- *  @return
- */
-- (UIImage *)imageForWebView{
+@end
+
+@implementation WKWebView (UIImage)
+
+- (void)imageForWebViewWithCompletion:(void (^)(UIImage *))completion {
     CGSize boundsSize = self.bounds.size;
     CGFloat boundsWidth = boundsSize.width;
     CGFloat boundsHeight = boundsSize.height;
     
     CGSize contentSize = self.scrollView.contentSize;
     CGFloat contentHeight = contentSize.height;
-    CGPoint offset = self.scrollView.contentOffset;
-    [self.scrollView setContentOffset:CGPointMake(0, 0)];
     
     NSMutableArray *images = [NSMutableArray array];
+    
+    // Chụp ảnh theo từng phần của webview
     while (contentHeight > 0) {
         UIGraphicsBeginImageContextWithOptions(boundsSize, NO, 0.0);
         CGContextRef ctx = UIGraphicsGetCurrentContext();
+        
+        // Render layer của WKWebView vào context
         [self.layer renderInContext:ctx];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         [images addObject:image];
         
         CGFloat offsetY = self.scrollView.contentOffset.y;
-        [self.scrollView setContentOffset:CGPointMake(0, offsetY + boundsHeight)];
+        self.scrollView.contentOffset = CGPointMake(0, offsetY + boundsHeight);
         contentHeight -= boundsHeight;
     }
-    [self.scrollView setContentOffset:offset];
     
+    // Ghép tất cả các ảnh lại thành một ảnh lớn
     CGFloat scale = [UIScreen mainScreen].scale;
     
     CGSize imageSize = CGSizeMake(contentSize.width * scale,
                                   contentSize.height * scale);
+    
     UIGraphicsBeginImageContext(imageSize);
     [images enumerateObjectsUsingBlock:^(UIImage *image, NSUInteger idx, BOOL *stop) {
         [image drawInRect:CGRectMake(0,
@@ -46,7 +51,10 @@
     
     UIImage *fullImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return fullImage;
+
+    if (completion) {
+        completion(fullImage);
+    }
 }
 
 @end

@@ -1,11 +1,7 @@
-#import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
-@interface UIWebView (UIImage)
+@interface WKWebView (UIImage)
 
-/**
- 
- *  @return
- */
 - (UIImage *)imageForWebView;
 
 @end
